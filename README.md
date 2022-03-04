@@ -2,8 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
-
+<img width="791" alt="Diagram Project 1" src="https://user-images.githubusercontent.com/90808588/156683000-56e4d426-ec5f-4c7c-844a-7ae9ad32a792.png">
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _YML____ file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: ELK install
