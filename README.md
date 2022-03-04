@@ -5,11 +5,11 @@ The files in this repository were used to configure the network depicted below.
 <img width="791" alt="Diagram Project 1" src="https://user-images.githubusercontent.com/90808588/156683000-56e4d426-ec5f-4c7c-844a-7ae9ad32a792.png">
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _YML____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: ELK install
-  -        Metricbeat Playbook
-  -        Filebeat Playbook
+  ELK install
+  Metricbeat Playbook
+  Filebeat Playbook
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -44,7 +44,6 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jump-box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
 
 Machines within the network can only be accessed by _Jumpbox____.
  The Elk Machine can have access from personal IP address A summary of the access policies in place can be found in the table below.
@@ -61,20 +60,16 @@ Machines within the network can only be accessed by _Jumpbox____.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - The main advantage is  It is flexible because it allows changes to be made within any of the VMs associated with it.
 The playbook implements the following tasks:
--Plants elk stack together
+- elk stack together
 - Monitors the server
-Command to Execute playbook
+*Command to Execute playbook
 -sudo ansible-playbook site.yml
--
--    1. Install Docker.io
+
+ 1. Install Docker.io
   2. Install python3-pip
   3. Install Docker Python Module
   4. Download and launch a Docker web container
-- ...
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
