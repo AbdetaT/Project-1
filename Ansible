@@ -1,29 +1,20 @@
-name: Install metric beat
-  hosts: webservers
-  become: true
-  tasks:
-    # Use command module
-  - name: Download metricbeat
-    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
-
-    # Use command module
-  - name: install metricbeat
-    command: dpkg -i metricbeat-7.4.0-amd64.deb
-
-    # Use copy module
-  - name: drop in metricbeat config
-    copy:
-      src: /etc/ansible/files/metricbeat-config.yml
-      dest: /etc/metricbeat/metricbeat.yml
-
-    # Use command module
-  - name: enable and configure docker module for metric beat
-    command: metricbeat modules enable docker
-
-    # Use command module
-  - name: setup metric beat
-    command: metricbeat setup
-
-    # Use command module
-  - name: start metric beat
-    command: service metricbeat start
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/IP can be a member of multiple groups
+# You need only a [webservers] and [elkservers] group.
+# List the IP Addresses of your webservers
+# You should have at least 2 IP addresses
+[webservers]
+10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+# List the IP address of your ELK server
+# There should only be one IP address
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
